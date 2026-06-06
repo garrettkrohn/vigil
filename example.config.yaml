@@ -1,0 +1,36 @@
+# Vigil Configuration File
+#
+# This file defines the services you want to monitor.
+# Each service has a name and one or more ports to monitor.
+#
+# Place your actual config at: ~/.config/vigil/config.yaml
+
+services:
+  # Example: API service running on port 8080
+  - name: "api-service"
+    ports: [8080]
+
+  # Example: Auth service with main port and debug port
+  - name: "auth-service"
+    ports: [8081, 9091]
+
+  # Example: Gateway with multiple ports
+  - name: "gateway-service"
+    ports: [3000, 3001]
+
+  # Example: Database service
+  - name: "postgres"
+    ports: [5432]
+
+  # Example: Service running in a Docker container
+  - name: "redis-cache"
+    ports: [6379]
+    docker: true
+
+# Tips:
+# - Service names should be descriptive
+# - Each port will be shown as a separate line in the TUI
+# - Services typically run in tmux sessions for Vigil to track them
+# - Set 'docker: true' to look for Docker container names instead of tmux sessions
+# - Use 'vigil' to launch the TUI and monitor your services
+# - Press 'r' in the TUI to refresh the service status

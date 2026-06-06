@@ -1,0 +1,33 @@
+# Vigil Configuration File
+#
+# This file defines the services you want to monitor.
+# Each service has a name and one or more ports to monitor.
+#
+# Place your actual config at: ~/.config/vigil/config.yaml
+
+services:
+  - name: "Pub service"
+    ports: [8080, 5007]
+
+  - name: "Core Service"
+    ports: [8081, 5006]
+
+  - name: "Calendar Service"
+    ports: [8008]
+
+  - name: "Notification Api"
+    ports: [8082]
+
+  - name: "Legacy Application"
+    docker: true
+    ports: [8083]
+
+  - name: "React Front End"
+    ports: [3000,3001]
+
+# Tips:
+# - Service names should be descriptive
+# - Each port will be shown as a separate line in the TUI
+# - Services typically run in tmux sessions for Vigil to track them
+# - Use 'vigil' to launch the TUI and monitor your services
+# - Press 'r' in the TUI to refresh the service status
